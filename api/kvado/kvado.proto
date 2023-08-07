@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+package kvado;
+
+option go_package = "github.com/poggerr/kvado/api/kvado:kvadorc";
+
+message AuthorRequest {
+  int32 author_id = 1;
+}
+
+message BookRequest {
+  int32 book_id = 1;
+}
+
+message Book {
+  int32 book_id = 1;
+  string book_name = 2;
+  int32 author_id = 3;
+}
+
+message BookResponse {
+  repeated Book books = 1;
+}
+
+message Author {
+  int32 author_id = 1;
+  string author_name = 2;
+}
+
+message AuthorResponse {
+  repeated Author authors = 1;
+}
+
+service YourService {
+  rpc FindBooksByAuthor(AuthorRequest) returns (BookResponse) {}
+  rpc FindAuthorsByBook(BookRequest) returns (AuthorResponse) {}
+}
