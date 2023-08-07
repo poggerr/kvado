@@ -7,36 +7,24 @@ markdown
 
 - Golang
 - MySQL
-- Docker (для запуска базы данных с тестовыми данными)
+- Docker
 
 ## Установка и настройка
 
 1. Склонируйте репозиторий:
    ```shell
-   git clone https://github.com/your/repo.git
+   git clone https://github.com/poggerr/kvado.git
 
 2. Установите зависимости:
    shell
    go mod download
 
 
-3. Создайте базу данных MySQL и настройте параметры подключения в файле config.go.
-
-4. Запустите миграции базы данных:
-   shell
-   go run migrate.go
-
-
 ## Запуск сервиса
 
-1. Запустите базу данных MySQL с помощью Docker:
+1. Запустите базу данных MySQL и сервис с помощью Docker:
    shell
-   docker-compose up -d
-
-
-2. Запустите сервис:
-   shell
-   go run main.go
+   docker-compose up --build
 
 
 ## Использование
